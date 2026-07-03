@@ -1,7 +1,7 @@
-# Proverbs Financial
+# Proverbs Wealth
 
-The marketing website for **Proverbs Financial** — a boutique financial
-planning firm.
+The marketing website for **Proverbs Wealth** — a financial planning firm.
+(The repository name remains `Proverbs-Financial`; the brand is Proverbs Wealth.)
 
 > Align your finances to a *truly wealthy life.*
 
@@ -15,8 +15,8 @@ mostly-white design inspired by a sophisticated, unhurried aesthetic.
   variables at the top of `styles.css`.
 - **Type ("two voices, one mind"):** [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk)
   (a modern grotesque) for all roman text — headlines, body, and labels —
-  paired with [Fraunces](https://fonts.google.com/specimen/Fraunces) *italics*
-  for the emphasized words and quotes. Loaded via Google Fonts.
+  paired with [Cormorant Garamond](https://fonts.google.com/specimen/Cormorant+Garamond)
+  *italics* for the emphasized words and quotes. Loaded via Google Fonts.
 - **Mark:** the sapling — recreated as inline SVG, so it scales crisply and needs no asset file.
 
 ## Positioning
