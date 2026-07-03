@@ -20,7 +20,7 @@
   // Gentle scroll-reveal for key blocks
   var revealSelector = [
     '.hero-inner', '.trust-inner', '.section-head',
-    '.chapter', '.pillar', '.step',
+    '.chapter', '.pillar', '.step', '.advisor',
     '.philosophy-inner', '.referral-inner',
     '.contact-copy', '.contact-form'
   ].join(',');
