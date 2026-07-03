@@ -7,6 +7,38 @@
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Header shadow once the page is scrolled
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var onScroll = function () {
+      header.classList.toggle('scrolled', window.scrollY > 8);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // Gentle scroll-reveal for key blocks
+  var revealSelector = [
+    '.hero-inner', '.trust-inner', '.section-head',
+    '.chapter', '.pillar', '.step',
+    '.philosophy-inner', '.referral-inner',
+    '.contact-copy', '.contact-form'
+  ].join(',');
+  var targets = Array.prototype.slice.call(document.querySelectorAll(revealSelector));
+
+  if ('IntersectionObserver' in window && targets.length) {
+    targets.forEach(function (el) { el.classList.add('reveal'); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+  }
+
   // Mobile nav
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.getElementById('nav-menu');
