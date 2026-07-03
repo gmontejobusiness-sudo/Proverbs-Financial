@@ -1,50 +1,64 @@
 # Proverbs Financial
 
-A clean, responsive marketing website for **Proverbs Financial**, an
-independent, fiduciary financial-planning and wealth-management firm.
+The marketing website for **Proverbs Financial** — a boutique financial
+planning firm.
 
-Built as a fast, self-contained **static site** — no build step, no
-dependencies. Just open `index.html` or host the folder anywhere.
+> Align your finances to a *truly wealthy life.*
+
+A fast, self-contained **static site**: no build step, no framework. Editorial,
+mostly-white design inspired by a sophisticated, unhurried aesthetic.
+
+## Brand system
+
+- **Palette (three families):** warm cream/white canvas, deep forest green
+  anchor, antique gold accent. Defined as CSS variables at the top of `styles.css`.
+- **Type ("two voices, one mind"):** [Fraunces](https://fonts.google.com/specimen/Fraunces)
+  serif for headlines & pull-quotes with expressive *italic* accents; Inter for
+  body and labels. Loaded via Google Fonts.
+- **Mark:** the sapling — recreated as inline SVG, so it scales crisply and needs no asset file.
+
+## Positioning
+
+The site is built around the firm's two niches:
+
+1. **The five-year horizon** — people preparing to retire within five years.
+2. **The accumulators** — business owners building wealth outside the business,
+   and executives with RSUs / equity comp.
+
+…and the philosophy that money is one piece of a *truly wealthy life*
+(relationships, finances, health, purpose).
 
 ## Structure
 
 | File | Purpose |
 |------|---------|
-| `index.html` | All page content and sections (hero, services, process, about, why-us, contact, footer). |
-| `styles.css` | Styling, layout, and responsive rules. Brand colors defined as CSS variables at the top. |
-| `script.js`  | Mobile nav toggle, footer year, and contact-form validation. |
+| `index.html` | All content and sections. |
+| `styles.css` | Design system, layout, responsive rules. |
+| `script.js`  | Mobile nav, footer year, contact-form validation. |
 
 ## Run locally
 
-Just open the file:
-
-```bash
-open index.html        # macOS
-```
-
-Or serve it (recommended, so relative paths behave):
-
 ```bash
 python3 -m http.server 8000
-# then visit http://localhost:8000
+# visit http://localhost:8000
 ```
 
 ## Customize
 
-- **Brand colors** — edit the `--navy`, `--gold`, etc. variables at the top of `styles.css`.
-- **Content** — edit the text directly in `index.html`.
+- **Colors / fonts** — edit the CSS variables at the top of `styles.css`.
+- **Copy** — edit directly in `index.html`.
 - **Contact form** — currently shows a client-side confirmation only. To collect
-  real submissions, wire the form to a service (e.g. Formspree, Netlify Forms) or
-  your own endpoint in the submit handler in `script.js`.
+  real submissions, wire the success block in `script.js` to a form service
+  (Formspree, Netlify Forms) or your own endpoint.
 
 ## Deploy
 
-This is a static site, so it works on any static host:
+Static, so it runs anywhere:
 
-- **GitHub Pages** — enable Pages for this repo (Settings → Pages), serving from the branch root.
-- **Netlify / Vercel / Cloudflare Pages** — point at the repo; no build command needed.
+- **GitHub Pages** — Settings → Pages → serve from the branch root.
+- **Netlify / Vercel / Cloudflare Pages** — point at the repo, no build command.
 
-## Disclaimer
+## Note
 
-Content is placeholder/sample copy. Replace contact details, statistics, and
-regulatory language with your firm's real, compliant information before going live.
+Contact details (email, phone, hours) and regulatory language are placeholders —
+replace with the firm's real, compliant information before going live.
