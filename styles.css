@@ -5,10 +5,10 @@
    ========================================================================== */
 
 :root {
-  /* Warm neutrals (the canvas) */
-  --paper:      #FCFBF6;   /* main background — warm near-white */
-  --paper-2:    #F4EFE3;   /* cream — alternate bands */
-  --paper-3:    #EFE8D8;   /* deeper cream */
+  /* Neutrals (the canvas) — pure white with a whisper of cool green-grey */
+  --paper:      #FFFFFF;   /* main background — pure white */
+  --paper-2:    #F5F8F6;   /* barely-there cool neutral for alternate blocks */
+  --paper-3:    #EDF2EF;   /* slightly deeper neutral */
 
   /* Greens */
   --forest:     #1E3D30;   /* primary deep green */
@@ -21,14 +21,16 @@
   --gold-soft:  #C9A24B;   /* softer gold — the leaf, ornaments */
 
   /* Ink */
-  --ink:        #26332C;   /* body text on light */
-  --ink-soft:   #5C6A61;   /* muted body text */
-  --line:       #E4DCCB;   /* warm hairline */
+  --ink:        #22302A;   /* body text on light */
+  --ink-soft:   #58665E;   /* muted body text */
+  --line:       #E7ECE9;   /* cool hairline */
   --line-dark:  rgba(255,255,255,0.14);
 
   --maxw: 1140px;
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
-  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Two voices: a modern grotesque for everything roman, Fraunces for italics */
+  --sans:    "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --display: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --serif:   "Fraunces", Georgia, "Times New Roman", serif;
 
   /* Modern shape + depth */
   --radius:      16px;
@@ -56,9 +58,17 @@ body {
 
 svg { display: block; }
 
-/* ------- Type primitives ------- */
-h1, h2, h3, h4 { font-family: var(--serif); color: var(--forest); font-weight: 400; margin: 0; line-height: 1.08; }
-h1 em, h2 em, h3 em, .brand-word em, .hero-title em { font-style: italic; }
+/* ------- Type primitives -------
+   Roman text is set in the modern grotesque; only emphasized words fall to
+   Fraunces italic — the "two voices" that carry the brand. */
+h1, h2, h3, h4 { font-family: var(--display); color: var(--forest); font-weight: 600; margin: 0; line-height: 1.08; letter-spacing: -0.02em; }
+h1 em, h2 em, h3 em, h4 em,
+.hero-title em, .trust-lead em, .referral-quote em, .brand-word em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
 
 p { margin: 0 0 1.1rem; }
 a { color: var(--forest); text-decoration: none; transition: color .18s ease; }
@@ -109,7 +119,7 @@ em { font-style: italic; }
 /* ============================ Header ============================ */
 .site-header {
   position: sticky; top: 0; z-index: 60;
-  background: rgba(252, 251, 246, 0.80);
+  background: rgba(255, 255, 255, 0.80);
   backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease);
@@ -117,17 +127,17 @@ em { font-style: italic; }
 .site-header.scrolled {
   border-bottom-color: var(--line);
   box-shadow: 0 10px 30px rgba(20,41,31,0.05);
-  background: rgba(252, 251, 246, 0.92);
+  background: rgba(255, 255, 255, 0.94);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 78px; }
 
 .brand { display: flex; align-items: center; gap: 0.65rem; color: var(--forest); }
 .brand-mark { color: var(--forest); display: inline-flex; }
 .brand-word {
-  font-family: var(--serif);
-  font-size: 1.28rem;
-  font-weight: 400;
-  letter-spacing: 0.01em;
+  font-family: var(--display);
+  font-size: 1.22rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--forest);
   line-height: 1;
 }
@@ -214,7 +224,9 @@ em { font-style: italic; }
 .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .trust-inner { max-width: 52rem; margin: 0 auto; text-align: center; }
 .trust-lead {
-  font-family: var(--serif);
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
   font-size: clamp(1.6rem, 3.4vw, 2.5rem);
   line-height: 1.28;
   color: var(--forest);
@@ -281,7 +293,7 @@ em { font-style: italic; }
 /* ------- Pillars ------- */
 .pillar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 .pillar { padding: 1.6rem 0; border-top: 2px solid var(--forest); }
-.pillar-num { font-family: var(--serif); font-size: 0.95rem; color: var(--gold); letter-spacing: 0.05em; }
+.pillar-num { font-family: var(--display); font-weight: 600; font-size: 0.9rem; color: var(--gold); letter-spacing: 0.02em; }
 .pillar h3 { font-size: 1.5rem; margin: 0.6rem 0 0.5rem; }
 .pillar p { color: var(--ink-soft); font-size: 0.98rem; margin: 0; }
 
@@ -300,8 +312,9 @@ em { font-style: italic; }
   border: 1px solid var(--gold);
   color: var(--gold);
   border-radius: 50%;
-  font-family: var(--serif);
-  font-size: 1.2rem;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 .step h3 { font-size: 1.35rem; margin-bottom: 0.2rem; }
 .step p { color: var(--ink-soft); margin: 0; font-size: 0.99rem; }
@@ -323,8 +336,9 @@ em { font-style: italic; }
   border-radius: 50%;
   background: var(--forest);
   color: var(--gold-soft);
-  font-family: var(--serif);
-  font-size: 1.5rem;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.35rem;
   letter-spacing: 0.02em;
   margin-bottom: 1.3rem;
   box-shadow: inset 0 0 0 1px rgba(201,162,75,0.35);
@@ -347,7 +361,9 @@ em { font-style: italic; }
   padding: clamp(3rem, 6vw, 5rem) clamp(1.6rem, 5vw, 4rem);
 }
 .referral-quote {
-  font-family: var(--serif);
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   font-size: clamp(1.8rem, 4vw, 3rem);
   line-height: 1.22;
   color: var(--forest);
