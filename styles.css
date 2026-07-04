@@ -532,6 +532,27 @@ em { font-style: italic; }
   margin-bottom: 1.5rem; letter-spacing: -0.01em;
 }
 
+/* ------- FAQ ------- */
+.faq-list { max-width: 46rem; margin: 0 auto; }
+.faq { border-top: 1px solid var(--line); }
+.faq:last-child { border-bottom: 1px solid var(--line); }
+.faq summary {
+  cursor: pointer; list-style: none;
+  display: flex; align-items: center; justify-content: space-between; gap: 1.2rem;
+  padding: 1.35rem 0;
+  font-family: var(--display); font-weight: 600; font-size: 1.12rem;
+  color: var(--forest); letter-spacing: -0.01em;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; flex: none;
+  font-family: var(--sans); font-weight: 400; font-size: 1.5rem; line-height: 1;
+  color: var(--gold); transition: transform .25s var(--ease);
+}
+.faq[open] summary::after { content: "\2013"; }
+.faq summary:hover { color: var(--gold-dark, var(--gold)); }
+.faq-answer { padding: 0 0 1.5rem; color: var(--ink-soft); font-size: 1.02rem; max-width: 40rem; }
+
 /* ------- Relationship / referral body ------- */
 .referral-body { max-width: 44rem; margin: 1.6rem auto 0; text-align: left; }
 .referral-body p { color: var(--ink-soft); font-size: 1.02rem; }
