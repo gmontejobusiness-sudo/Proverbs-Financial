@@ -65,3 +65,30 @@ Static, so it runs anywhere:
 
 Contact details (email, phone, hours) and regulatory language are placeholders —
 replace with the firm's real, compliant information before going live.
+
+
+## Site structure
+
+Two ways to view the same content:
+
+**Multi-page site (primary).** Real pages, best for hosting, SEO, and sharing:
+
+| Page | File |
+|------|------|
+| Home | `index.html` |
+| The Two Chapters | `two-chapters.html` |
+| How We Help | `how-we-help.html` |
+| Our Philosophy | `philosophy.html` |
+| Your Team | `team.html` |
+| Resources | `resources.html` |
+| Truly Wealthy Life | `truly-wealthy-life.html` |
+| Schedule a Conversation | `contact.html` |
+
+All pages share `styles.css` and `script.js`. Cross-page links only work when the
+files are served together (any static host, or opened from the same folder).
+
+**Long-form single page.** The whole story on one scroll: `onepage.html`
+(also available fully self-contained for easy sharing).
+
+> Rebuild the pages after editing content with `scratchpad/build_pages.py`,
+> or edit the page files directly.
