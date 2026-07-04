@@ -322,36 +322,36 @@ em { font-style: italic; }
 .step p { color: var(--ink-soft); margin: 0; font-size: 0.99rem; }
 
 /* ------- Advisors ------- */
-.advisor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; }
+.advisor-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
 .advisor {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: clamp(1.8rem, 3vw, 2.6rem);
+  padding: clamp(1.5rem, 2.2vw, 2rem);
   box-shadow: var(--shadow-soft);
   transition: transform .35s var(--ease), box-shadow .35s var(--ease);
 }
 .advisor:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .advisor-avatar {
   display: grid; place-items: center;
-  width: 74px; height: 74px;
+  width: 62px; height: 62px;
   border-radius: 50%;
   background: var(--forest);
   color: var(--gold-soft);
   font-family: var(--display);
   font-weight: 600;
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   letter-spacing: 0.02em;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.1rem;
   box-shadow: inset 0 0 0 1px rgba(201,162,75,0.35);
 }
-.advisor h3 { font-size: 1.4rem; margin-bottom: 0.15rem; }
+.advisor h3 { font-size: 1.22rem; margin-bottom: 0.15rem; }
 .advisor-role {
   font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.14em;
   color: var(--gold); margin-bottom: 0.9rem;
 }
-.advisor-bio { color: var(--ink-soft); font-size: 0.98rem; margin: 0; }
+.advisor-bio { color: var(--ink-soft); font-size: 0.9rem; line-height: 1.55; margin: 0; }
 
 /* ------- Referral ------- */
 .referral { text-align: center; }
