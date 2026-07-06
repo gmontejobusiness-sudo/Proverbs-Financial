@@ -90,5 +90,5 @@ files are served together (any static host, or opened from the same folder).
 **Long-form single page.** The whole story on one scroll: `onepage.html`
 (also available fully self-contained for easy sharing).
 
-> Rebuild the pages after editing content with `scratchpad/build_pages.py`,
+> Rebuild the pages after editing content with `build_pages.py`,
 > or edit the page files directly.
